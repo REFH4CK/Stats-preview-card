@@ -18,7 +18,7 @@
   font-family: "Inter", serif;
 }
 
-body{
+body {
   background: var(--bg-color);
 }
 
@@ -99,12 +99,12 @@ body{
   border-radius: 0 10px 10px 0;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: .5rem;
-  line-height: .2;
+  padding: 0.5rem;
+  line-height: 0.2;
 }
 
 .attribution {
@@ -117,9 +117,17 @@ footer{
   color: hsl(228, 45%, 44%);
 }
 
-@media (width < 990px) {
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
 
-  .main-container{
+@media (width < 990px) {
+  .main-container {
     height: 80vh;
   }
   .body-card {
@@ -139,33 +147,33 @@ footer{
     gap: 3rem;
     padding: 2rem;
   }
-  .left-side-card .stats-section{
+  .left-side-card .stats-section {
     padding: 0;
   }
-  .left-side-card .title-card{
+  .left-side-card .title-card {
     font-size: 2.5rem;
   }
-  .left-side-card .description{
+  .left-side-card .description {
     font-size: 1.3rem;
   }
-  .stats-section{
+  .stats-section {
     flex-direction: column;
     gap: 1.5rem;
   }
-  .stats-section div .stats-info{
+  .stats-section div .stats-info {
     font-size: 1.7rem;
   }
-  .stats-section div .stats-name{
+  .stats-section div .stats-name {
     font-size: 1.1rem;
   }
   .right-side-card {
     grid-area: top-side;
     height: 18rem;
     border-radius: 10px 10px 0 0;
-    background: url(images/image-header-mobile.jpg) no-repeat center center / cover;
+    background: url(images/image-header-mobile.jpg) no-repeat center center /
+      cover;
   }
   .right-side-card::before {
     border-radius: 10px 10px 0 0;
   }
 }
-
