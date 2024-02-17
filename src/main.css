@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/Inter/static/Inter-Regular.ttf);
+}
+
+:root {
+  --bg-color: hsl(233, 47%, 7%);
+  --bg-color-leftSide: hsl(244, 38%, 16%);
+  --overlay: hsla(277, 94%, 26%, 0.558);
+  --color-description: hsla(0, 0%, 100%, 0.542);
+  --statsName-color: hsla(0, 0%, 100%, 0.6);
+  --span-color: hsl(277, 64%, 61%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.main-container {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 2rem);
+  background: var(--bg-color);
+  padding: 2rem;
+}
+
+.body-card {
+  width: 60rem;
+  height: 26rem;
+  display: grid;
+  grid-template-columns: repeat(2, 30rem);
+  place-items: center;
+}
+
+.left-side-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: var(--bg-color-leftSide);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  padding: 2rem 3.5rem;
+  color: #fff;
+}
+
+.left-side-card .title-card {
+  font-size: 2.2rem;
+}
+
+.left-side-card .title-card span {
+  color: var(--span-color);
+}
+
+.description {
+  color: var(--color-description);
+  font-size: 15px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3rem;
+}
+
+.stats-section div .stats-info {
+  font-size: 1.5rem;
+}
+
+.stats-section div .stats-name {
+  color: var(--statsName-color);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.right-side-card {
+  position: relative;
+  background: url(../images/image-header-desktop.jpg) no-repeat center center /
+    100% 100%;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+.right-side-card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  border-radius: 0 10px 10px 0;
+}
+
+footer {
+  height: 2rem;
+  width: 100%;
+  padding: 0.5rem;
+  line-height: 0.2;
+}
+
+.attribution {
+  font-size: .8rem;
+  text-align: center;
+  color: #fff;
+}
+
+.attribution a {
+  color: hsl(194, 80%, 52%);
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+@media (width <= 990px) {
+  .main-container {
+    height: calc(100vh - 2rem);
+    align-items: flex-start;
+  }
+  .body-card {
+    height: 50rem;
+    width: auto;
+    grid-template-columns: repeat(1, 27.5rem);
+    grid-template-areas:
+      "top-side"
+      "bottom-side";
+  }
+  .left-side-card {
+    grid-area: bottom-side;
+    border-radius: 0px 0 10px 10px;
+    justify-content: start;
+    height: 39rem;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem;
+  }
+  .left-side-card .stats-section {
+    padding: 0;
+  }
+  .left-side-card .title-card {
+    font-size: 2.5rem;
+  }
+  .left-side-card .description {
+    font-size: 1.3rem;
+  }
+  .stats-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .stats-section div .stats-info {
+    font-size: 1.7rem;
+  }
+  .stats-section div .stats-name {
+    font-size: 1.1rem;
+  }
+  .right-side-card {
+    grid-area: top-side;
+    height: 18rem;
+    border-radius: 10px 10px 0 0;
+    background: url(../images/image-header-mobile.jpg) no-repeat center center /
+      cover;
+  }
+  .right-side-card::before {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+@media (width <= 375px) {
+  .main-container {
+    height: calc(100vh - 2rem);
+    align-items: flex-start;
+  }
+  .body-card {
+    height: 30rem;
+    grid-template-columns: repeat(1, 30rem);
+  }
+  .left-side-card {
+    width: 85vw;
+    height: 35rem;
+    align-items: center;
+  }
+  .left-side-card .title-card {
+    font-size: 1.8rem;
+    width: 18rem;
+  }
+  .left-side-card .description {
+    font-size: 1rem;
+    width: 18rem;
+  }
+  .stats-section div .stats-info {
+    font-size: 1.5rem;
+  }
+  .stats-section div .stats-name {
+    font-size: 1rem;
+  }
+  .right-side-card {
+    width: 85vw;
+    grid-area: top-side;
+    height: 18rem;
+    border-radius: 10px 10px 0 0;
+    background: url(../images/image-header-mobile.jpg) no-repeat center center /
+      cover;  
+  }
+  footer {
+    display: none;
+  }
+}
